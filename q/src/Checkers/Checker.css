@@ -1,0 +1,8 @@
+.Checker{
+    position: relative;
+    width: 60px;
+    height: 60px;
+    left: -65px;
+    bottom: 5px;
+    z-index: 1;
+}

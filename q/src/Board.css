@@ -1,0 +1,34 @@
+.Board{
+
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.BoardPart{
+    margin: 5px;
+    height: 55px;
+    width: 10%;
+}
+
+li{
+    list-style-type: none;
+    display: inline;
+}
+
+ul{
+    list-style-type: none;
+}
+
+div{
+    width: 999px;
+    float: left;
+}
+
+p{
+    position: relative;
+    font-family: Algerian;
+    color: black;
+    font-size: 30px;
+}
