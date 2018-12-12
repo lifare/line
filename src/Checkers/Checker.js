@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import blue from './img\\blue.svg';
-import yellow from './img\\yellow.svg';
-import red from './img\\red.svg';
-import green from './img\\green.svg';
+import blue from './img/blue.svg';
+import yellow from './img/yellow.svg';
+import red from './img/red.svg';
+import green from './img/green.svg';
 import "./Checker.css"
 
 class Checker extends React.Component {
