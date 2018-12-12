@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import  cell from './cell.svg';
 import cellChoose from './addCell.svg'
 import "./Cell.css"
-import Checker from "../Checkers\\Checker";
+import Checker from "../Checkers/Checker";
 
 class Cell extends React.Component {
     render() {
