@@ -51,12 +51,27 @@ class Board extends React.Component {
                     board: this.initialBoard(),
                     curCell:undefined
                 });
+                return;
             }
             let color = this.chooseColor();
             newBoard[index] = color
             let line = this.find_line(new Point(index % this.width, Math.trunc(index / this.height)), newBoard);
             if(line.length === 2)
                 this.delete_line(newBoard, line[0], line[1]);
+        }
+        if (this.getFreeCell(newBoard).length === 0)
+        {
+            alert("GAME OVER WITH SCORE: " + this.score);
+            this.score = 0;
+            this.setState ({
+                score: 0,
+                gameEnd:false,
+                newTurn:true,
+                Color:["blue", "yellow", "red", "green"],
+                board: this.initialBoard(),
+                curCell:undefined
+            });
+            return;
         }
         this.setState({
             board: newBoard,
@@ -79,7 +94,7 @@ class Board extends React.Component {
         curCell:undefined
     }
     inBounds(point) {
-        return point.X >= 0 && point.X < this.height && point.Y >= 0 && point.Y < this.width;
+        return point !== undefined&&point.X >= 0 && point.X < this.height && point.Y >= 0 && point.Y < this.width;
     }
 
     get_next(point) {
@@ -119,6 +134,8 @@ class Board extends React.Component {
     }
     find_line(point, map) {
         let res = []
+        if (point === undefined)
+            return res;
         let cur_element = map[point.X +point.Y*this.height]
         let i = point.X;
         let j = point.Y;
@@ -158,6 +175,8 @@ class Board extends React.Component {
     }
 
     delete_line(map, start, end) {
+        if(start === undefined || end === undefined)
+            return;
         for (let i = start.X; i < end.X + 1; i++) {
             for (let j = start.Y; j < end.Y + 1; j++) {
                 map[i + this.height * j]='cell'
