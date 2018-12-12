@@ -7,9 +7,9 @@
     justify-content: center;
 }
 .BoardPart{
-    margin: 5px;
-    height: 55px;
-    width: 10%;
+    margin: 5px;;
+    height: 43px;
+    width: 8.7%;
 }
 
 li{
@@ -22,12 +22,16 @@ ul{
 }
 
 div{
-    width: 999px;
+    width: 500px;
     float: left;
+}
+span{
+    overflow: auto;
+    position: absolute;
+    display: inline;
 }
 
 p{
-    position: relative;
     font-family: Algerian;
     color: black;
     font-size: 30px;

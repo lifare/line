@@ -200,15 +200,17 @@ class Board extends React.Component {
         }
         let arr= this.state.board.map((e, i) => <li key={i} className="BoardPart"><Cell color={e} chooseCell={this.state.curCell===i} number={i} changeCurCell={this.changeCurCell}/> </li>);
         return (
-            <div>
-                <p>Score:  {this.score} </p>
-                <ul className="Board">
-                    {arr}
-                </ul>
+            <span>
+                <div>
+                    <p>Score:  {this.score} </p>
+                    <ul className="Board">
+                        {arr}
+                    </ul>
+                </div>
                 <p>Rule:
                     You must collect a line vertically or horizontally, consisting of 5 or more circles. It is forbidden to walk around the dioganal. After each move in the random mete, 3 new circles appear. The game will end when the field is filled.
                 </p>
-            </div>
+            </span>
         )
     };
 
