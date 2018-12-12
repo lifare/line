@@ -41,10 +41,16 @@ class Board extends React.Component {
             let index = this.choseCell(this.getFreeCell(newBoard));
             if (isNaN(index))
             {
-                this.setState({
-                    gameEnd: true
-                })
-                return;
+                alert("GAME OVER WITH SCORE: " + this.score);
+                this.score = 0;
+                this.setState ({
+                    score: 0,
+                    gameEnd:false,
+                    newTurn:true,
+                    Color:["blue", "yellow", "red", "green"],
+                    board: this.initialBoard(),
+                    curCell:undefined
+                });
             }
             let color = this.chooseColor();
             newBoard[index] = color
@@ -186,19 +192,6 @@ class Board extends React.Component {
     };
 
     render() {
-        if (this.state.gameEnd)
-        {
-            alert("GAME OVER WITH SCORE: " + this.score);
-            this.score = 0;
-            this.setState ({
-                score: 0,
-                gameEnd:false,
-                newTurn:true,
-                Color:["blue", "yellow", "red", "green"],
-                board: this.initialBoard(),
-                curCell:undefined
-            });
-        }
         if (this.state.newTurn){
             this.makeMove(this.state.board);
             this.setState({
