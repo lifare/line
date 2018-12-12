@@ -1,5 +1,5 @@
 import React from 'react';
-import Cell from "./Cell\\Cell"
+import Cell from "./Cell/Cell"
 import "./App.css"
 import Board from "./Board"
 class App extends React.Component {
