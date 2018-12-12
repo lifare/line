@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Cell from "./Cell\\Cell";
+import Cell from "./Cell/Cell";
 import Point from './Point'
 import './Board.css'
 
